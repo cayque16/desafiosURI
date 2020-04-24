@@ -1,5 +1,3 @@
-# AINDA EM DESENVOLVIMENTO A SOLUÇÃO APRESENTA ERROS
-
 def read_numeric():
   try:
     # read for Python 2.x
@@ -12,40 +10,39 @@ def read_numeric():
 valor = read_numeric()
 
 notas100 = int(valor/100)
-resto = valor % 100
+resto = round(valor % 100,2)
 
 notas50 = int(resto/50)
-resto = resto % 50
+resto = round(resto % 50,2)
 
 notas20 = int(resto/20)
-resto = resto % 20
+resto = round(resto % 20,2)
 
 notas10 = int(resto/10)
-resto = resto % 10
+resto = round(resto % 10,2)
 
 notas5 = int(resto/5)
-resto = resto % 5
+resto = round(resto % 5,2)
 
 notas2 = int(resto/2)
-resto = resto % 2
+resto = round(resto % 2,2)
 
 moedas1 = int(resto/1)
-resto = resto % 1
+resto = round(resto % 1,2)
 
 moedas050 = int(resto/0.5)
-resto = resto % 0.5
+resto = round(resto % 0.5,2)
 
 moedas025 = int(resto/0.25)
-resto = resto % 0.25
+resto = round(resto % 0.25,2)
 
 moedas010 = int(resto/0.10)
-resto = resto % 0.10
+resto = round(resto % 0.10,2)
 
 moedas005 = int(resto/0.05)
-resto = resto % 0.05
+resto = round(resto % 0.05,2)
 
 moedas001 = int(resto/0.01)
-resto = resto % 0.01
 
 print(str("NOTAS:"))
 print(str(notas100)+str(" nota(s) de R$ 100.00"))
