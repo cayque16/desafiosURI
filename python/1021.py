@@ -1,3 +1,5 @@
+# AINDA EM DESENVOLVIMENTO A SOLUÇÃO APRESENTA ERROS
+
 def read_numeric():
   try:
     # read for Python 2.x
