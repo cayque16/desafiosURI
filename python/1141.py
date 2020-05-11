@@ -1,3 +1,5 @@
+# CORRIGIR
+# 	Time limit exceeded
 while True:
     casos = int(input())
     if casos == 0:
