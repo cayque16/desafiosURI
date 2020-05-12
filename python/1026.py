@@ -3,31 +3,26 @@
 def circuito(a,b):
   return (not a and b) or (a and not b)
 
-def dec_to_bin(num):
-  result = ''
-  while num > 1:
-    result += str(num % 2)
-    num = num // 2
-  result += str(num)
-  if len(result) < 32:
-    for i in range(32-len(result)):
-      result += '0'
-  return result
-
-def bin_to_dec(num):
-  mult = 1
-  result = 0
-  for i in num:
-    result += int(i) * mult
-    mult *= 2
-  return result
+def acrecenta_zero(texto,tam_final):
+  tam_final -= len(texto)
+  while tam_final > 0:
+    texto = '0' + texto
+    tam_final -= 1
+  return texto
 
 while True:
     try:
         a,b = map(int,input().split(" "))
 
-        bin_de_a = dec_to_bin(a)
-        bin_de_b = dec_to_bin(b)
+        bin_de_a = bin(a)[2:]
+        bin_de_b = bin(b)[2:]
+
+        tam_a, tam_b = len(bin_de_a), len(bin_de_b)
+
+        if tam_a > tam_b:
+          bin_de_b = acrecenta_zero(bin_de_b,tam_a)
+        elif tam_b > tam_a:
+          bin_de_a = acrecenta_zero(bin_de_a,tam_b)
 
         result = ''
         for (i,j) in zip(bin_de_a,bin_de_b):
@@ -36,6 +31,6 @@ while True:
             else:
                 result += '0'
 
-        print(bin_to_dec(result))
+        print(int(result, 2))
     except EOFError:
         break
